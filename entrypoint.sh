@@ -9,7 +9,7 @@ echo $PULL_REQUEST_TITLE
 if [[ $IS_BRANCH_NAME_VALID != "1" ]]
 then
   echo "The branch name( $BRANCH_NAME ) is not valid, for more information visit: https://github.com/ateli-development/shipgratis/wiki/Coding-standards"
-  echo "Once you changed the Pull-request title, you should create a new commit and push it.
+  echo "Once you changed the Pull-request title, you should create a new commit and push it."
   exit 101
 fi
 
