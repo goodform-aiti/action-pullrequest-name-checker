@@ -4,8 +4,6 @@ echo " ************** MODIFIED FILES"
 printf ${MODIFIED_FILES}
 printf "\n*****************************\n"
 
-echo $(git branch -a)
-
 
 IS_BRANCH_NAME_VALID=$( echo ${BRANCH_NAME} | grep -P "^(bug|feature|hotfix|epic|release|revert)/PZ-\d{4}" | wc -l)
 
