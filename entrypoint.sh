@@ -22,7 +22,7 @@ fi
 
 if [[ $IS_PULL_REQUEST_TITLE_VALID != "1" ]]
 then
-  echo "The pull request title is not valid, it should be in this format: $VALID_COMMIT_MESSAGE_PREFIX here is the jira title"
+  echo "The pull request title( $PULL_REQUEST_TITLE ) is not valid, it should be in this format: $VALID_COMMIT_MESSAGE_PREFIX here is the jira title"
   exit 101
 fi
 
