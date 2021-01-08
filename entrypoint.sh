@@ -4,10 +4,8 @@ echo " ************** MODIFIED FILES"
 printf ${MODIFIED_FILES}
 printf "\n*****************************\n"
 
-echo $BRANCH_NAME
 
-BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
-IS_BRANCH_NAME_VALID=$( git rev-parse --abbrev-ref HEAD | grep -P "^(bug|feature|hotfix|epic|release|revert)/PZ-\d{4}" | wc -l)
+IS_BRANCH_NAME_VALID=$( ${BRANCH_NAME} | grep -P "^(bug|feature|hotfix|epic|release|revert)/PZ-\d{4}" | wc -l)
 
 if [[ $IS_BRANCH_NAME_VALID != "1" ]]
 then
@@ -25,7 +23,7 @@ for message in $GIT_MESSAGES
 do
   COMMIT_REVISION_NUMBER=$(echo $message | cut -c 1-40)
   COMMIT_MESSAGE_PREFIX=$(echo $message | cut -c 41-48)
-  VALID_COMMIT_MESSAGE_PREFIX=$(git rev-parse --abbrev-ref HEAD | grep -oP "PZ-\d{4}"):
+  VALID_COMMIT_MESSAGE_PREFIX=$(${BRANCH_NAME} | grep -oP "PZ-\d{4}"):
 
 
   if [[ $VALID_COMMIT_MESSAGE_PREFIX != $COMMIT_MESSAGE_PREFIX ]]
