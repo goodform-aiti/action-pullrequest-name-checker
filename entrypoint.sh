@@ -23,7 +23,7 @@ for message in $GIT_MESSAGES
 do
   COMMIT_REVISION_NUMBER=$(echo $message | cut -c 1-40)
   COMMIT_MESSAGE_PREFIX=$(echo $message | cut -c 41-48)
-  VALID_COMMIT_MESSAGE_PREFIX=$(${BRANCH_NAME} | grep -oP "PZ-\d{4}"):
+  VALID_COMMIT_MESSAGE_PREFIX=$(echo ${BRANCH_NAME} | grep -oP "PZ-\d{4}"):
 
 
   if [[ $VALID_COMMIT_MESSAGE_PREFIX != $COMMIT_MESSAGE_PREFIX ]]
