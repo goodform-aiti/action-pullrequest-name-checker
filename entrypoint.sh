@@ -1,9 +1,20 @@
 #!/bin/bash
 
+BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+IS_BRANCH_NAME_VALID=$( git rev-parse --abbrev-ref HEAD | grep -P "^(bug|feature|hotfix|epic|release|revert)/PZ-\d{4}" | wc -l)
+
+if [[ $IS_BRANCH_NAME_VALID != "1" ]]
+then
+  echo "The branch name( $BRANCH_NAME ) is not valid, for more information visit: https://github.com/ateli-development/shipgratis/wiki/Coding-standards"
+  exit 101
+fi
+
+
+
+
+
 
 GIT_MESSAGES=$(git log master.. --no-merges --first-parent --pretty=format:%H%s | grep -oP "^.{40}.{8}")
-
-
 for message in $GIT_MESSAGES
 do
   COMMIT_REVISION_NUMBER=$(echo $message | cut -c 1-40)
