@@ -5,7 +5,7 @@ printf ${MODIFIED_FILES}
 printf "\n*****************************\n"
 
 
-IS_BRANCH_NAME_VALID=$( ${BRANCH_NAME} | grep -P "^(bug|feature|hotfix|epic|release|revert)/PZ-\d{4}" | wc -l)
+IS_BRANCH_NAME_VALID=$( echo ${BRANCH_NAME} | grep -P "^(bug|feature|hotfix|epic|release|revert)/PZ-\d{4}" | wc -l)
 
 if [[ $IS_BRANCH_NAME_VALID != "1" ]]
 then
