@@ -9,7 +9,7 @@ then
   echo "feature"
 else
   IS_BRANCH_NAME_VALID=$( echo ${BRANCH_NAME} | grep -P "^(release|revert)/\d+" | wc -l)
-  echo" release"
+  echo "release"
 fi
 
 
