@@ -3,7 +3,7 @@
 
 IS_RELEASE_BRANCH==$( echo ${BRANCH_NAME} | grep -P "^(release|revert)/" | wc -l)
 
-if[[ $IS_RELEASE_BRANCH == "1" ]]
+if [[ $IS_RELEASE_BRANCH == "1" ]]
 then
   IS_BRANCH_NAME_VALID=$( echo ${BRANCH_NAME} | grep -P "^(bug|feature|hotfix|epic)/PZ-\d{4}" | wc -l)
 else
