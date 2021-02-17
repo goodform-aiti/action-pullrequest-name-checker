@@ -6,6 +6,9 @@ echo "**********************************************"
 
 IS_RELEASE_BRANCH=$( echo ${BRANCH_NAME} | grep -P "^(release|revert)/" | wc -l)
 
+echo "is release branch"
+echo $IS_RELEASE_BRANCH
+
 
 
 if [[ $IS_RELEASE_BRANCH != "1" ]]
