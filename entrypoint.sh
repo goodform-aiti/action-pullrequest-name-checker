@@ -16,6 +16,13 @@ else
 fi
 
 
+if [[ $IS_BRANCH_NAME_VALID == "1" and $IS_RELEASE_BRANCH =="1" ]]
+then
+  exit 0
+fi
+
+
+
 
 VALID_COMMIT_MESSAGE_PREFIX=$(echo ${BRANCH_NAME} | grep -oP "PZ-\d{4}")
 IS_PULL_REQUEST_TITLE_VALID=$(echo $PULL_REQUEST_TITLE | grep -P "^"$VALID_COMMIT_MESSAGE_PREFIX".+" | wc -l)
