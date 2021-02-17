@@ -16,7 +16,7 @@ else
 fi
 
 
-if [[ $IS_BRANCH_NAME_VALID == "1" && $IS_RELEASE_BRANCH =="1" ]]
+if [[ $IS_BRANCH_NAME_VALID == "1" && $IS_RELEASE_BRANCH == "1" ]]
 then
   echo "Pull request name not check the PR name of release and revert branches "
   exit 0
