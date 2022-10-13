@@ -1,7 +1,7 @@
-FROM php:7.4-cli
+FROM php:8.1-cli
 
 
-LABEL version="1.0"
+LABEL version="1.1"
 LABEL maintainer="Amir Alian <amir@ateli.cz>"
 
 COPY "entrypoint.sh" "/entrypoint.sh"
